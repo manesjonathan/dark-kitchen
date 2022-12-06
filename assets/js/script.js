@@ -1,5 +1,5 @@
 import { DISHES, LOREM_IPSUM } from "./config.js";
-import { addToCart, showCart } from "./shopping-cart.js";
+import { addToCart, showCart, updateCart } from "./shopping-cart.js";
 
 function main() {
     let dishes = DISHES;
@@ -20,7 +20,13 @@ function drawShoppingCart() {
     let aside = document.createElement("aside");
     aside.className = "shopping-cart";
     aside.style.display = "none";
+    aside.style.position = "fixed" //set in scss
+    aside.style.top = 0; //set in scss
+    aside.style.right = 0; //set in scss
 
+    let ol = document.createElement("ol");
+
+    aside.appendChild(ol);
     let section = document.createElement("section")
     document.body.appendChild(aside);
 
@@ -29,8 +35,13 @@ function drawShoppingCart() {
 function drawCartButton() {
     let cartButton = document.createElement("button");
     cartButton.innerText = "Shopping Cart"
-    cartButton.addEventListener("click", () => {
-        showCart();
+    cartButton.addEventListener("click", (e) => {
+        let aside = document.querySelector("aside");
+        if (aside.style.display === "none") {
+            showCart();
+        } else {
+            aside.style.display = "none";
+        }
     })
     return cartButton;
 }
@@ -63,6 +74,14 @@ function drawDishes(dish) {
     addToCartButton.innerText = "Add to cart"
     addToCartButton.addEventListener("click", () => {
         addToCart(dish);
+        let aside = document.querySelector("aside");
+        let ol = document.querySelector("ol");
+        if (aside.style.display === "flex"){
+            ol.innerHTML = null;
+        //todo update the aside menu if displayed
+            showCart();
+        }
+
     })
     innerSection.appendChild(addToCartButton);
 
