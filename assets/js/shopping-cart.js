@@ -1,9 +1,9 @@
 let orderListEmpty = [];
 
-export function addToCart(dish) {
-    orderListEmpty.push(dish);
+export function addToCart(dishe) {
+    orderListEmpty.push(dishe);
     sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
-    window.alert(dish.name + " is added to the shopping cart!");
+    window.alert(dishe.name + " is added to the shopping cart!");
     showCart();
 }
 
@@ -14,9 +14,9 @@ export function showCart() {
 
     let orderList = orderListEmpty;
     if (orderList !== null) {
-        for (let dish of orderList) {
+        for (let dishe of orderList) {
             let li = document.createElement("li");
-            li.innerText = dish.name;
+            li.innerText = dishe.name;
             ol.appendChild(li);
         }
         aside.appendChild(ol);

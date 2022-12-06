@@ -8,8 +8,9 @@ function main() {
     for (let dish of dishes) {
         section.appendChild(drawDishes(dish));
     }
-    let cartButton = drawShoppingCartButton();
-    main.appendChild(cartButton);
+    let shoppingCartButton = drawShoppingCartButton();
+
+    main.appendChild(shoppingCartButton);
     main.appendChild(section);
     document.body.appendChild(main);
     drawShoppingCart();
@@ -35,6 +36,10 @@ function drawShoppingCart() {
     document.body.appendChild(aside);
 }
 
+/**
+ * Create the shopping cart element
+ * @returns the shopping cart button
+ */
 function drawShoppingCartButton() {
     let cartButton = document.createElement("button");
     cartButton.innerText = "Shopping Cart"
@@ -49,23 +54,28 @@ function drawShoppingCartButton() {
     return cartButton;
 }
 
-function drawDishes(dish) {
+/**
+ * Create an article for each dishe
+ * @param {Object} dishe 
+ * @returns the article
+ */
+function drawDishes(dishe) {
     let article = document.createElement("article");
 
     // Create the picture
     let picture = document.createElement("img");
-    picture.setAttribute("alt", dish.name);
-    picture.setAttribute("src", dish.picture);
+    picture.setAttribute("alt", dishe.name);
+    picture.setAttribute("src", dishe.picture);
     article.appendChild(picture);
 
     // Name of the dish
     let title = document.createElement("h2");
-    title.innerText = dish.name;
+    title.innerText = dishe.name;
     article.appendChild(title);
 
     // Price of the dish
     let price = document.createElement("h3");
-    price.innerText = dish.price + " €";
+    price.innerText = dishe.price + " €";
     article.appendChild(price);
 
     // Create the inner section
@@ -76,13 +86,13 @@ function drawDishes(dish) {
     let addToCartButton = document.createElement("button");
     addToCartButton.innerText = "Add to cart"
     addToCartButton.addEventListener("click", () => {
-        addToCart(dish);
+        addToCart(dishe);
     })
     innerSection.appendChild(addToCartButton);
 
     // Create summary
     let summary = document.createElement("p");
-    summary.innerText = dish.description;
+    summary.innerText = dishe.description;
     innerSection.appendChild(summary);
 
     // Create the back section
