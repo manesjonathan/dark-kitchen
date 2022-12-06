@@ -1,5 +1,5 @@
-import { DISHES, LOREM_IPSUM } from "./config.js";
-import { addToCart, showCart } from "./shopping-cart.js";
+import { DISHES } from "./config.js";
+import { addToCart, clearCart, showCart } from "./shopping-cart.js";
 
 function main() {
     let dishes = DISHES;
@@ -8,11 +8,11 @@ function main() {
     for (let dish of dishes) {
         section.appendChild(drawDishes(dish));
     }
-    let cartButton = drawCartButton();
-    main.appendChild(cartButton);
+    let shoppingCartButton = drawShoppingCartButton();
+
+    main.appendChild(shoppingCartButton);
     main.appendChild(section);
     document.body.appendChild(main);
-
     drawShoppingCart();
 }
 
@@ -25,20 +25,28 @@ function drawShoppingCart() {
     aside.style.right = 0; //set in scss
 
     let ol = document.createElement("ol");
-
     aside.appendChild(ol);
-    let section = document.createElement("section")
-    document.body.appendChild(aside);
 
+    let resetButton = document.createElement("button");
+    resetButton.addEventListener("click", () => {
+        clearCart();
+    })
+
+    aside.appendChild(resetButton);
+    document.body.appendChild(aside);
 }
 
-function drawCartButton() {
+/**
+ * Create the shopping cart element
+ * @returns the shopping cart button
+ */
+function drawShoppingCartButton() {
     let cartButton = document.createElement("button");
     cartButton.innerText = "Shopping Cart"
     cartButton.addEventListener("click", (e) => {
         let aside = document.querySelector("aside");
         if (aside.style.display === "none") {
-        showCart();
+            showCart();
         } else {
             aside.style.display = "none";
         }
@@ -46,23 +54,28 @@ function drawCartButton() {
     return cartButton;
 }
 
-function drawDishes(dish) {
+/**
+ * Create an article for each dishe
+ * @param {Object} dishe 
+ * @returns the article
+ */
+function drawDishes(dishe) {
     let article = document.createElement("article");
 
     // Create the picture
     let picture = document.createElement("img");
-    picture.setAttribute("alt", dish.name);
-    picture.setAttribute("src", dish.picture);
+    picture.setAttribute("alt", dishe.name);
+    picture.setAttribute("src", dishe.picture);
     article.appendChild(picture);
 
     // Name of the dish
     let title = document.createElement("h2");
-    title.innerText = dish.name;
+    title.innerText = dishe.name;
     article.appendChild(title);
 
     // Price of the dish
     let price = document.createElement("h3");
-    price.innerText = dish.price + " €";
+    price.innerText = dishe.price + " €";
     article.appendChild(price);
 
     // Create the inner section
@@ -73,25 +86,14 @@ function drawDishes(dish) {
     let addToCartButton = document.createElement("button");
     addToCartButton.innerText = "Add to cart"
     addToCartButton.addEventListener("click", () => {
-        addToCart(dish);
-        let aside = document.querySelector("aside");
-        let ol = document.querySelector("ol");
-        if (aside.style.display === "flex"){
-            ol.innerHTML = null;
-        //todo update the aside menu if displayed
-            showCart();
-        }
-
+        addToCart(dishe);
     })
     innerSection.appendChild(addToCartButton);
 
-
     // Create summary
     let summary = document.createElement("p");
-    summary.innerText = dish.description;
+    summary.innerText = dishe.description;
     innerSection.appendChild(summary);
-
-
 
     // Create the back section
     let backSection = document.createElement("section");

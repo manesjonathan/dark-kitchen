@@ -19,7 +19,6 @@ export const DISHES = [
         description: "Poulet fermier, courgettes grillées, sauce aux herbes, coriandre et parmesan"
     },
 
-
     // Dish 3
     {
         id: "saumon-fume",
@@ -102,6 +101,3 @@ export const DISHES = [
             + " mozzarella fumée, courgettes grillées, huile de basilic et persil"
     },
 ];
-
-export const LOREM_IPSUM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-    + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
