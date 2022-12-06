@@ -1,19 +1,41 @@
 import { DISHES, LOREM_IPSUM } from "./config.js";
-import { addToCart } from "./shopping-cart.js";
+import { addToCart, showCart } from "./shopping-cart.js";
 
 function main() {
     let dishes = DISHES;
     let main = document.createElement("main");
     let section = document.createElement("section");
     for (let dish of dishes) {
-        section.appendChild(addDishes(dish));
+        section.appendChild(drawDishes(dish));
     }
-
+    let cartButton = drawCartButton();
+    main.appendChild(cartButton);
     main.appendChild(section);
     document.body.appendChild(main);
+
+    drawShoppingCart();
 }
 
-function addDishes(dish) {
+function drawShoppingCart() {
+    let aside = document.createElement("aside");
+    aside.className = "shopping-cart";
+    aside.style.display = "none";
+
+    let section = document.createElement("section")
+    document.body.appendChild(aside);
+
+}
+
+function drawCartButton() {
+    let cartButton = document.createElement("button");
+    cartButton.innerText = "Shopping Cart"
+    cartButton.addEventListener("click", () => {
+        showCart();
+    })
+    return cartButton;
+}
+
+function drawDishes(dish) {
     let article = document.createElement("article");
 
     // Create the picture
@@ -59,8 +81,6 @@ function addDishes(dish) {
     // Assemble
     article.appendChild(innerSection);
     article.appendChild(backSection);
-
-    sessionStorage.setItem(dish.id, JSON.stringify(dish));
 
     return article;
 }
