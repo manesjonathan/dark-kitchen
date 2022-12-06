@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const orderList = [];
 
 export function addToCart(dish) {
@@ -33,9 +32,4 @@ export function showCart() {
 
 export function updateCart(){
 
-=======
-
-export function addToCart(dishe) {
-    window.alert(dishe.name + " is added to the shopping cart!");
->>>>>>> af5073f (second commit)
 }
