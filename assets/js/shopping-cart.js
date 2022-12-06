@@ -1,35 +1,35 @@
-const orderList = [];
+let orderListEmpty = [];
 
 export function addToCart(dish) {
-
-    sessionStorage.setItem(dish.id, JSON.stringify(dish));
-    orderList.push(dish);
-    sessionStorage.setItem("shopping-cart", JSON.stringify(orderList));
-
+    orderListEmpty.push(dish);
+    sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
     window.alert(dish.name + " is added to the shopping cart!");
+    showCart();
 }
 
 export function showCart() {
-
     let aside = document.querySelector("aside");
     let ol = document.querySelector("ol");
+    ol.innerHTML = null;
 
-    let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
-    console.log(orderList);
-
-    for (let dish of orderList) {
-        let li = document.createElement("li");
-        li.innerText = dish.name;
-        ol.appendChild(li);
-        console.log(dish.name);
+    let orderList = orderListEmpty;
+    if (orderList !== null) {
+        for (let dish of orderList) {
+            let li = document.createElement("li");
+            li.innerText = dish.name;
+            ol.appendChild(li);
+        }
+        aside.appendChild(ol);
+        document.body.appendChild(aside);
     }
-
-    aside.appendChild(ol);
-    document.body.appendChild(aside);
     aside.style.display = "flex";
     ol.style.display = "block";
 }
 
-export function updateCart(){
+export function clearCart(){
+    orderListEmpty = [];
+    let ol = document.querySelector("ol");
+    ol.innerHTML = null;
 
+    sessionStorage.setItem("shopping-cart", orderListEmpty);
 }
