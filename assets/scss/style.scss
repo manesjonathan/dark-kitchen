@@ -64,10 +64,25 @@ nav {
   color: white;
 }
 
+main {
+  background-color: $light_brown;
+  .background {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  h2 {
+    font-family: $font;
+    margin: 0;
+    padding-left: 5%;
+    padding-top: 3%;
+  }
+}
 section {
   background-color: $light_brown;
   display: flex;
   flex-direction: column;
+
   article {
     padding: 5%;
     margin: 5%;
@@ -79,7 +94,7 @@ section {
       object-fit: cover;
     }
 
-    h2 {
+    h3 {
       font-size: 1rem;
       height: 2rem;
     }
@@ -95,6 +110,76 @@ section {
         border-radius: 15px;
         background-color: $dark_green;
         border: none;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $dark_green;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  button {
+    font-size: 1.2rem;
+    font-family: $font;
+    width: 30vw;
+    border-radius: 15px;
+    background-color: $light_green;
+    border: none;
+    padding: 2%;
+    margin: 5%;
+    a {
+      text-decoration: none;
+    }
+
+    a:link {
+      color: black;
+    }
+
+    a:visited {
+      color: $dark_green;
+    }
+
+    a:hover {
+      color: $dark_brown;
+    }
+
+    a:active {
+      color: $light_brown;
+    }
+  }
+  div {
+    display: flex;
+    img {
+      width: 50%;
+    }
+  }
+  ol {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0;
+    display: flex;
+    li {
+      margin: 30%;
+      font-size: 2rem;
+      color: $grey;
+
+      a:link {
+        color: $grey;
+      }
+
+      a:visited {
+        color: $light_green;
+      }
+
+      a:hover {
+        color: $dark_brown;
+      }
+
+      a:active {
+        color: $light_brown;
       }
     }
   }
