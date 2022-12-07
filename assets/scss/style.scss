@@ -5,19 +5,28 @@ $light_brown: #F2C49B;
 $dark_brown: #BF815E;
 
 $font: 'Poppins', sans-serif;
-
+$logo: 'League Spartan', sans-serif;
 
 
 
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $font;
   }
   
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: $dark_green;
+    display: flex;
+    img {
+        width:10vw;
+        height:auto;
+    }
+    h1 {
+        font-family: $logo;
+        width: 12vw;
+    }
    a {
     float: left;
     display: block;
@@ -25,7 +34,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.25rem;
   }
 }
   
