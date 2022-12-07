@@ -9,6 +9,7 @@ export function addToCart(dishe) {
     sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
     window.alert(dishe.name + " is added to the shopping cart!");
     showCart();
+    calculateTotal();
 }
 
 /**
@@ -37,10 +38,32 @@ export function showCart() {
 /**
  * Set the shopping cart list to null and remove content from the list
  */
-export function clearCart(){
+export function clearCart() {
     orderListEmpty = [];
     let ol = document.querySelector("ol");
     ol.innerHTML = null;
-
-    sessionStorage.setItem("shopping-cart", orderListEmpty);
+    sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
+    calculateTotal();
 }
+
+
+/**
+ * Take the price of each dishe in the shopping cart and add
+ */
+function calculateTotal() {
+    let total = 0.00;
+    let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
+    for (let dishe of orderList) {
+        total = (total + dishe.price);
+    }
+    console.log(formatter.format(total) + " €");
+}
+
+
+/**
+ * A formatter function to round number at 2 decimals
+ */
+const formatter = new Intl.NumberFormat('fr-FR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+});
