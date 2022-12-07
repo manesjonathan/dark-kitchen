@@ -51,6 +51,22 @@ nav a {
   color: white;
 }
 
+main {
+  background-color: #f2c49b;
+}
+main .background {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main h2 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+
 section {
   background-color: #f2c49b;
   display: flex;
@@ -64,9 +80,10 @@ section article {
 section article img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-section article h2 {
+section article h3 {
   font-size: 1rem;
   height: 2rem;
 }
@@ -82,6 +99,68 @@ section article .inner-section button {
   border-radius: 15px;
   background-color: #8c7503;
   border: none;
+}
+
+footer {
+  background-color: #8c7503;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+footer button {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  width: 30vw;
+  border-radius: 15px;
+  background-color: #d9bf3d;
+  border: none;
+  padding: 2%;
+  margin: 5%;
+}
+footer button a {
+  text-decoration: none;
+}
+footer button a:link {
+  color: black;
+}
+footer button a:visited {
+  color: #8c7503;
+}
+footer button a:hover {
+  color: #bf815e;
+}
+footer button a:active {
+  color: #f2c49b;
+}
+footer div {
+  display: flex;
+}
+footer div img {
+  width: 50%;
+}
+footer ol {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0;
+  display: flex;
+}
+footer ol li {
+  margin: 30%;
+  font-size: 2rem;
+  color: #f2f2f2;
+}
+footer ol li a:link {
+  color: #f2f2f2;
+}
+footer ol li a:visited {
+  color: #d9bf3d;
+}
+footer ol li a:hover {
+  color: #bf815e;
+}
+footer ol li a:active {
+  color: #f2c49b;
 }
 
 @media screen and (max-width: 600px) {
