@@ -95,6 +95,11 @@ function drawDishes(dishe) {
     summary.innerText = dishe.description;
     innerSection.appendChild(summary);
 
+    // Vegan pin
+    let icon = document.createElement("i");
+    icon.setAttribute("class", "fa-solid fa-seedling");
+    innerSection.appendChild(icon);
+
     // Create the back section
     let backSection = document.createElement("section");
     backSection.className = "back-section";
@@ -111,10 +116,10 @@ export function responsiveMenu() {
     console.log("coucou")
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
-      x.className += " responsive";
+        x.className += " responsive";
     } else {
-      x.className = "topnav";
+        x.className = "topnav";
     }
-  }
+}
 
 main();
