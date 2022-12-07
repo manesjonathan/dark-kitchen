@@ -57,14 +57,18 @@ export function clearCart() {
 /**
  * Take the price of each dishe in the shopping cart and add
  */
- export function calculateTotal() {
+export function calculateTotal() {
     let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
-    let total = 0.00;
-    for (let dishe of orderList) {
-        total = (total + dishe.price);
+    console.log(orderList);
+    if (orderList !== null) {
+        let total = 0.00;
+        for (let dishe of orderList) {
+            total = (total + dishe.price);
+        }
+        return formatter.format(total) + " €";
+    } else {
+        return "0,00 €"
     }
-    return formatter.format(total) + " €";
-
 }
 
 
