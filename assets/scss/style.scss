@@ -1,0 +1,246 @@
+$grey: #f2f2f2;
+$light_green: #d9bf3d;
+$dark_green: #8c7503;
+$light_brown: #f2c49b;
+$dark_brown: #bf815e;
+
+$font: "Poppins", sans-serif;
+$logo: "League Spartan", sans-serif;
+
+body {
+  margin: 0;
+  font-family: $font;
+}
+
+header {
+  display: flex;
+  background-color: $dark_green;
+  padding: 2%;
+
+  img {
+    width: 10vw;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+  }
+
+  h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: $logo;
+    color: $grey;
+    font-size: 1.5rem;
+  }
+}
+
+nav {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+
+  .icon {
+    display: none;
+  }
+
+  a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+main {
+  background-color: $light_brown;
+  .background {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  h2 {
+    font-family: $font;
+    margin: 0;
+    padding-left: 5%;
+    padding-top: 3%;
+  }
+}
+section {
+  background-color: $light_brown;
+  display: flex;
+  flex-direction: column;
+
+  article {
+    padding: 5%;
+    margin: 5%;
+    background-color: $dark_brown;
+
+    img {
+      width: 100%;
+      height: 30vh;
+      object-fit: cover;
+    }
+
+    h3 {
+      font-size: 1rem;
+      height: 2rem;
+    }
+
+    .inner-section {
+      background-color: $dark_brown;
+      display: flex;
+      flex-direction: column;
+      button {
+        font-size: 1.2rem;
+        font-family: $font;
+        margin: 0;
+        border-radius: 15px;
+        background-color: $dark_green;
+        border: none;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $dark_green;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  button {
+    font-size: 1.2rem;
+    font-family: $font;
+    width: 30vw;
+    border-radius: 15px;
+    background-color: $light_green;
+    border: none;
+    padding: 2%;
+    margin: 5%;
+    a {
+      text-decoration: none;
+    }
+
+    a:link {
+      color: black;
+    }
+
+    a:visited {
+      color: $dark_green;
+    }
+
+    a:hover {
+      color: $dark_brown;
+    }
+
+    a:active {
+      color: $light_brown;
+    }
+  }
+  div {
+    display: flex;
+    img {
+      width: 50%;
+    }
+  }
+  ol {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0;
+    display: flex;
+    li {
+      margin: 30%;
+      font-size: 2rem;
+      color: $grey;
+
+      a:link {
+        color: $grey;
+      }
+
+      a:visited {
+        color: $light_green;
+      }
+
+      a:hover {
+        color: $dark_brown;
+      }
+
+      a:active {
+        color: $light_brown;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    img {
+      width: 5vw;
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 2vw;
+    }
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    img {
+      width: 5vw;
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 2vw;
+    }
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+}
