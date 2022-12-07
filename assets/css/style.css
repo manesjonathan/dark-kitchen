@@ -57,14 +57,27 @@ main {
 main .background {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-main h2 {
+main div {
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main div h2 {
   font-family: "Poppins", sans-serif;
-  margin: 0;
   padding-left: 5%;
-  padding-top: 3%;
+}
+main div button {
+  position: absolute;
+  right: 5vw;
+  background: none;
+  border: none;
+}
+main div button i {
+  font-size: 2rem;
+  color: #8c7503;
 }
 
 section {
@@ -80,8 +93,7 @@ section article {
 section article img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section article h3 {
   font-size: 1rem;
@@ -99,6 +111,32 @@ section article .inner-section button {
   border-radius: 15px;
   background-color: #8c7503;
   border: none;
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  background-color: #8c7503;
+  display: inline-block;
+  vertical-align: middle;
+  flex-direction: column;
+  min-width: 30vw;
+}
+aside button {
+  margin: 5%;
+  padding: 5%;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 15px;
+  background-color: #d9bf3d;
+  border: none;
+}
+aside .shopping-list {
+  margin: 5%;
+  list-style-type: disc;
 }
 
 footer {
@@ -140,7 +178,7 @@ footer div img {
   width: 50%;
   margin: 0;
 }
-footer ol {
+footer .social {
   list-style-type: none;
   padding: 0;
   font-size: 0;
@@ -149,21 +187,21 @@ footer ol {
   width: 30%;
   margin: 0;
 }
-footer ol li {
+footer .social li {
   margin: 30%;
   font-size: 2rem;
   color: #f2f2f2;
 }
-footer ol li a:link {
+footer .social li a:link {
   color: #f2f2f2;
 }
-footer ol li a:visited {
+footer .social li a:visited {
   color: #d9bf3d;
 }
-footer ol li a:hover {
+footer .social li a:hover {
   color: #bf815e;
 }
-footer ol li a:active {
+footer .social li a:active {
   color: #f2c49b;
 }
 

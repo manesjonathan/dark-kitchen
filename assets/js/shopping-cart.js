@@ -17,7 +17,7 @@ export function addToCart(dishe) {
  */
 export function showCart() {
     let aside = document.querySelector("aside");
-    let ol = document.querySelector("ol");
+    let ol = document.querySelector(".shopping-list");
     ol.innerHTML = null;
 
     let orderList = orderListEmpty;
@@ -30,6 +30,11 @@ export function showCart() {
         aside.appendChild(ol);
         document.body.appendChild(aside);
     }
+
+    let total = document.querySelector(".total");
+    total.innerText = calculateTotal()
+
+
     aside.style.display = "flex";
     ol.style.display = "block";
 }
@@ -40,23 +45,26 @@ export function showCart() {
  */
 export function clearCart() {
     orderListEmpty = [];
-    let ol = document.querySelector("ol");
+    let ol = document.querySelector(".shopping-list");
     ol.innerHTML = null;
     sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
     calculateTotal();
+    let total = document.querySelector(".total");
+    total.innerText = "0,00 €";
 }
 
 
 /**
  * Take the price of each dishe in the shopping cart and add
  */
-function calculateTotal() {
-    let total = 0.00;
+ export function calculateTotal() {
     let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
+    let total = 0.00;
     for (let dishe of orderList) {
         total = (total + dishe.price);
     }
-    console.log(formatter.format(total) + " €");
+    return formatter.format(total) + " €";
+
 }
 
 
