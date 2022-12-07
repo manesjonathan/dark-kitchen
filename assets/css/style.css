@@ -157,7 +157,7 @@ footer button {
   background-color: #d9bf3d;
   border: none;
   padding: 2%;
-  margin: 5%;
+  margin: 2%;
 }
 footer button a {
   text-decoration: none;
@@ -192,7 +192,7 @@ footer .social {
   margin: 0;
 }
 footer .social li {
-  margin: 30%;
+  margin: 10% 30%;
   font-size: 2rem;
   color: #f2f2f2;
 }
