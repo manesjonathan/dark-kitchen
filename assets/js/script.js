@@ -5,6 +5,10 @@ function main() {
     let dishes = DISHES;
     let main = document.createElement("main");
     let section = document.createElement("section");
+    let title = document.createElement("h2");
+    title.innerText = "Nos tartines";
+    main.prepend(title);
+
     for (let dish of dishes) {
         section.appendChild(drawDishes(dish));
     }
@@ -12,7 +16,7 @@ function main() {
 
     main.appendChild(shoppingCartButton);
     main.appendChild(section);
-    document.body.appendChild(main);
+    document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
 }
 
@@ -69,12 +73,12 @@ function drawDishes(dishe) {
     article.appendChild(picture);
 
     // Name of the dish
-    let title = document.createElement("h2");
+    let title = document.createElement("h3");
     title.innerText = dishe.name;
     article.appendChild(title);
 
     // Price of the dish
-    let price = document.createElement("h3");
+    let price = document.createElement("h4");
     price.innerText = dishe.price + " €";
     article.appendChild(price);
 
@@ -95,6 +99,12 @@ function drawDishes(dishe) {
     summary.innerText = dishe.description;
     innerSection.appendChild(summary);
 
+    // Vegan pin
+    if (dishe.category.includes("vegan")) {
+        let icon = document.createElement("i");
+        icon.setAttribute("class", "fa-solid fa-seedling");
+        innerSection.appendChild(icon);
+    }
     // Create the back section
     let backSection = document.createElement("section");
     backSection.className = "back-section";
@@ -104,6 +114,17 @@ function drawDishes(dishe) {
     article.appendChild(backSection);
 
     return article;
+}
+
+
+export function responsiveMenu() {
+    console.log("coucou")
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
 }
 
 main();
