@@ -10,11 +10,19 @@ body {
 }
 .topnav img {
   width: 10vw;
-  height: auto;
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+.topnav .icon {
+  display: none;
 }
 .topnav h1 {
   font-family: "League Spartan", sans-serif;
-  width: 12vw;
+  width: 25vw;
+  color: #F2F2F2;
 }
 .topnav a {
   float: left;
@@ -36,8 +44,31 @@ body {
   color: white;
 }
 
-.topnav .icon {
-  display: none;
+section {
+  background-color: #F2C49B;
+  display: flex;
+  flex-direction: column;
+}
+section article {
+  padding: 5%;
+  margin: 5%;
+  background-color: #BF815E;
+}
+section article img {
+  width: 100%;
+  height: auto;
+}
+section article button {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  width: 35vw;
+  border-radius: 15px;
+  background-color: #8C7503;
+  border: none;
+}
+section .inner-section {
+  background-color: #BF815E;
 }
 
 @media screen and (max-width: 600px) {
@@ -50,15 +81,15 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
-  .topnav.responsive {
+  .topnav {
     position: relative;
   }
-  .topnav.responsive .icon {
+  .topnav .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .topnav a {
     float: none;
     display: block;
     text-align: left;
