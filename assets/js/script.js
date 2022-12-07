@@ -108,6 +108,7 @@ function drawDishes(dishe) {
 
 
 export function responsiveMenu() {
+    console.log("coucou")
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
