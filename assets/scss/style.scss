@@ -1,42 +1,48 @@
-$grey: #F2F2F2;
-$light_green: #D9BF3D;
-$dark_green: #8C7503;
-$light_brown: #F2C49B;
-$dark_brown: #BF815E;
+$grey: #f2f2f2;
+$light_green: #d9bf3d;
+$dark_green: #8c7503;
+$light_brown: #f2c49b;
+$dark_brown: #bf815e;
 
-$font: 'Poppins', sans-serif;
-$logo: 'League Spartan', sans-serif;
-
-
-
+$font: "Poppins", sans-serif;
+$logo: "League Spartan", sans-serif;
 
 body {
-    margin: 0;
-    font-family: $font;
+  margin: 0;
+  font-family: $font;
+}
+
+header {
+  display: flex;
+  background-color: $dark_green;
+  padding: 2%;
+
+  img {
+    width: 10vw;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
   }
-  
-  .topnav {
-    overflow: hidden;
-    background-color: $dark_green;
-    display: flex;
-    
-    img {
-        width: 10vw;
-        height:100%;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: 2vw;
-        margin-right: 2vw;
-    }
-    .icon {
+
+  h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: $logo;
+    color: $grey;
+  }
+}
+
+nav {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+
+  .icon {
     display: none;
-    }
-    h1 {
-        font-family: $logo;
-        width: 25vw;
-        color: $grey;
-    }
-   a {
+  }
+
+  a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -46,64 +52,66 @@ body {
     font-size: 1.25rem;
   }
 }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
 
-  section {
-    background-color: $light_brown;
-    display: flex;
-    flex-direction: column;
-    article {
-        padding: 5%;
-        margin: 5%;
-        background-color: $dark_brown;
-        img {
-            width: 100%;
-            height: auto;
-            
-        }
-        button {
-            font-size: 1.2rem;
-            font-family: $font;
-            margin: 0;
-            width: 35vw;
-            border-radius: 15px;
-            background-color: $dark_green;
-            border: none;
-        }
-        
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+section {
+  background-color: $light_brown;
+  display: flex;
+  flex-direction: column;
+  article {
+    padding: 5%;
+    margin: 5%;
+    background-color: $dark_brown;
+    img {
+      width: 100%;
+      height: auto;
     }
-        .inner-section {
-            background-color: $dark_brown;
-        }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
+    button {
+      font-size: 1.2rem;
+      font-family: $font;
+      margin: 0;
+      width: 35vw;
+      border-radius: 15px;
+      background-color: $dark_green;
+      border: none;
     }
   }
-  
-  @media screen and (max-width: 600px) {
-    .topnav {position: relative;}
-    .topnav .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
+  .inner-section {
+    background-color: $dark_brown;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
