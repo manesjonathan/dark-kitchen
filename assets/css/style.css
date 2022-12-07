@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-color: #f2c49b;
 }
 
 header {
@@ -69,18 +70,20 @@ main div h2 {
   font-family: "Poppins", sans-serif;
   padding-left: 5%;
 }
-main div button {
-  position: absolute;
-  right: 5vw;
+main .cart-button {
+  position: fixed;
+  right: 2vw;
+  top: 35vh;
   background: none;
   border: none;
 }
-main div button i {
+main .cart-button i {
   font-size: 2rem;
   color: #8c7503;
 }
 
 section {
+  margin: auto;
   background-color: #f2c49b;
   display: flex;
   flex-direction: column;
@@ -103,6 +106,7 @@ section article .inner-section {
   background-color: #bf815e;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 section article .inner-section button {
   font-size: 1.2rem;

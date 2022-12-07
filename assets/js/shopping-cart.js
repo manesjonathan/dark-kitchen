@@ -7,7 +7,6 @@ let orderListEmpty = [];
 export function addToCart(dishe) {
     orderListEmpty.push(dishe);
     sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
-    window.alert(dishe.name + " is added to the shopping cart!");
     showCart();
     calculateTotal();
 }

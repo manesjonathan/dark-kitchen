@@ -15,8 +15,9 @@ function main() {
         section.appendChild(drawDishes(dish));
     }
     let shoppingCartButton = drawShoppingCartButton();
-    div.appendChild(shoppingCartButton);
     main.appendChild(div);
+
+    main.appendChild(shoppingCartButton);
     main.appendChild(section);
     document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
@@ -53,7 +54,7 @@ function drawShoppingCart() {
  */
 function drawShoppingCartButton() {
     let cartButton = document.createElement("button");
-
+    cartButton.className = "cart-button"
     let icon = document.createElement("i");
     icon.setAttribute("class", "fas fa-shopping-cart");
     cartButton.appendChild(icon);
