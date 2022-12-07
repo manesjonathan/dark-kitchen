@@ -4,6 +4,15 @@ body {
   background-color: #f2c49b;
 }
 
+body.dark {
+  background-color: black;
+  color: white;
+}
+body.dark header, body.dark main, body.dark section, body.dark article, body.dark .inner-section, body.dark aside, body.dark footer {
+  background-color: black;
+  color: white;
+}
+
 header {
   display: flex;
   background-color: #8c7503;
@@ -72,12 +81,24 @@ main div h2 {
 }
 main .cart-button {
   position: fixed;
-  right: 2vw;
+  right: 1vw;
   top: 35vh;
   background: none;
   border: none;
 }
 main .cart-button i {
+  font-size: 2rem;
+  color: #8c7503;
+}
+
+.day-night {
+  position: fixed;
+  right: 1vw;
+  top: 25vh;
+  background: none;
+  border: none;
+}
+.day-night i {
   font-size: 2rem;
   color: #8c7503;
 }
@@ -128,6 +149,7 @@ aside {
   vertical-align: middle;
   flex-direction: column;
   min-width: 30vw;
+  overflow: auto;
 }
 aside button {
   margin: 5%;

@@ -1,9 +1,11 @@
 import { DISHES } from "./config.js";
 import { addToCart, calculateTotal, clearCart, showCart } from "./shopping-cart.js";
 
+let dayNightButton;
+
 function main() {
     let dishes = DISHES;
-    let main = document.createElement("main");
+    let main = document.querySelector("main");
     let section = document.createElement("section");
     let div = document.createElement("div");
     let title = document.createElement("h2");
@@ -21,6 +23,26 @@ function main() {
     main.appendChild(section);
     document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
+
+    // Day-Night switch
+    dayNightButton = document.createElement("button");
+    dayNightButton.className = "day-night"
+    let dayNightIcon = document.createElement("i");
+    dayNightIcon.setAttribute("class", "fas fa-moon");
+    dayNightButton.appendChild(dayNightIcon);
+    document.body.insertBefore(dayNightButton, document.querySelector("footer"));
+
+    dayNightButton.addEventListener("click", () => {
+        if (document.body.className != "dark") {
+            localStorage.setItem("theme", "dark");
+            dayNightButton.querySelector("i").className = "fa fa-sun";
+            document.body.className = "dark";
+        } else {
+            dayNightButton.querySelector("i").className = "fa fa-moon";
+            localStorage.setItem("theme", "light")
+            document.body.className = ""
+        }
+    });
 }
 
 function drawShoppingCart() {
@@ -44,8 +66,8 @@ function drawShoppingCart() {
     total.className = "total";
     aside.appendChild(total);
 
-
-    document.body.appendChild(aside);
+    let main = document.querySelector("main");
+    main.appendChild(aside);
 }
 
 /**

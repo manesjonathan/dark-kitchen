@@ -11,8 +11,18 @@ body {
   margin: 0;
   font-family: $font;
   background-color: $light_brown;
-
 }
+
+
+body.dark {
+  background-color: black;
+  color: white;
+  header, main, section, article, .inner-section, aside, footer{
+    background-color: black;
+    color: white;
+  }
+}
+
 
 header {
   display: flex;
@@ -86,7 +96,7 @@ main {
   }
   .cart-button {
     position: fixed;
-    right: 2vw;
+    right: 1vw;
     top: 35vh;
     background: none;
     border: none;
@@ -95,6 +105,21 @@ main {
       font-size: 2rem;
       color: $dark_green;
     }
+  }
+}
+
+.day-night {
+  position: fixed;
+  right: 1vw;
+  top: 25vh;
+  background: none;
+  border: none;
+
+
+
+  i {
+    font-size: 2rem;
+    color: $dark_green;
   }
 }
 section {
@@ -148,6 +173,7 @@ aside {
   vertical-align: middle;
   flex-direction: column;
   min-width: 30vw;
+  overflow:auto;
 
   button {
     margin: 5%;
@@ -163,6 +189,9 @@ aside {
     list-style-type: disc;
   }
 }
+
+
+
 
 footer {
   background-color: $dark_green;
