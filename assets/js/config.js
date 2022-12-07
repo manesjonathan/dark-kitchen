@@ -64,7 +64,7 @@ export const DISHES = [
         id: "toast-avocat",
         name: "TOAST AVOCAT",
         price: 12.45,
-        picture: "assets/image/pain-2.webp",
+        picture: "assets/image/ambiance-7.webp",
         category: ["vegan"],
         description: "Pain de blé au levain bio toasté avec guacamole, pickles de concombre, radis, super graines bio et sel citron-cumin"
     },
@@ -97,7 +97,7 @@ export const DISHES = [
         price: 16.45,
         picture: "assets/image/tartine_poulet_mozza.webp",
         category: [],
-        description: "pain de blé au levain bio toasté avec poulet fermier, "
+        description: "Pain de blé au levain bio toasté avec poulet fermier, "
             + " mozzarella fumée, courgettes grillées, huile de basilic et persil"
     },
 ];
