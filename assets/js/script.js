@@ -100,9 +100,11 @@ function drawDishes(dishe) {
     innerSection.appendChild(summary);
 
     // Vegan pin
-    let icon = document.createElement("i");
-    icon.setAttribute("class", "fa-solid fa-seedling");
-    innerSection.appendChild(icon);
+    if (dishe.category.includes("vegan")) {
+        let icon = document.createElement("i");
+        icon.setAttribute("class", "fa-solid fa-seedling");
+        innerSection.appendChild(icon);
+    }
 
     // Create the back section
     let backSection = document.createElement("section");
