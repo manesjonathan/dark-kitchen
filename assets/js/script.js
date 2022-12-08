@@ -1,43 +1,73 @@
 import { DISHES } from "./config.js";
-import { addToCart, clearCart, showCart } from "./shopping-cart.js";
+import { addToCart, calculateTotal, clearCart, showCart } from "./shopping-cart.js";
+
+let dayNightButton;
 
 function main() {
     let dishes = DISHES;
-    let main = document.createElement("main");
+    let main = document.querySelector("main");
     let section = document.createElement("section");
+    let div = document.createElement("div");
     let title = document.createElement("h2");
     title.innerText = "Nos tartines";
-    main.prepend(title);
+    div.appendChild(title);
+
 
     for (let dish of dishes) {
         section.appendChild(drawDishes(dish));
     }
     let shoppingCartButton = drawShoppingCartButton();
+    main.appendChild(div);
 
     main.appendChild(shoppingCartButton);
     main.appendChild(section);
     document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
+
+    // Day-Night switch
+    dayNightButton = document.createElement("button");
+    dayNightButton.className = "day-night"
+    let dayNightIcon = document.createElement("i");
+    dayNightIcon.setAttribute("class", "fas fa-moon");
+    dayNightButton.appendChild(dayNightIcon);
+    document.body.insertBefore(dayNightButton, document.querySelector("footer"));
+
+    dayNightButton.addEventListener("click", () => {
+        if (document.body.className != "dark") {
+            localStorage.setItem("theme", "dark");
+            dayNightButton.querySelector("i").className = "fa fa-sun";
+            document.body.className = "dark";
+        } else {
+            dayNightButton.querySelector("i").className = "fa fa-moon";
+            localStorage.setItem("theme", "light")
+            document.body.className = ""
+        }
+    });
 }
 
 function drawShoppingCart() {
     let aside = document.createElement("aside");
     aside.className = "shopping-cart";
     aside.style.display = "none";
-    aside.style.position = "fixed" //set in scss
-    aside.style.top = 0; //set in scss
-    aside.style.right = 0; //set in scss
 
     let ol = document.createElement("ol");
+    ol.className = "shopping-list";
     aside.appendChild(ol);
 
     let resetButton = document.createElement("button");
+    resetButton.innerText = "Reset the cart";
     resetButton.addEventListener("click", () => {
         clearCart();
     })
 
     aside.appendChild(resetButton);
-    document.body.appendChild(aside);
+
+    let total = document.createElement("h3");
+    total.className = "total";
+    aside.appendChild(total);
+
+    let main = document.querySelector("main");
+    main.appendChild(aside);
 }
 
 /**
@@ -46,7 +76,11 @@ function drawShoppingCart() {
  */
 function drawShoppingCartButton() {
     let cartButton = document.createElement("button");
-    cartButton.innerText = "Shopping Cart"
+    cartButton.className = "cart-button"
+    let icon = document.createElement("i");
+    icon.setAttribute("class", "fas fa-shopping-cart");
+    cartButton.appendChild(icon);
+
     cartButton.addEventListener("click", (e) => {
         let aside = document.querySelector("aside");
         if (aside.style.display === "none") {
