@@ -1,6 +1,16 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-color: #f2c49b;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+body.dark header, body.dark main, body.dark section, body.dark article, body.dark .inner-section, body.dark aside, body.dark footer {
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -47,7 +57,7 @@ nav a {
 }
 
 .topnav a.active {
-  background-color: #04aa6d;
+  background-color: #d9bf3d;
   color: white;
 }
 
@@ -60,14 +70,42 @@ main .background {
   -o-object-fit: cover;
      object-fit: cover;
 }
-main h2 {
+main div {
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main div h2 {
   font-family: "Poppins", sans-serif;
-  margin: 0;
   padding-left: 5%;
-  padding-top: 3%;
+}
+main .cart-button {
+  position: fixed;
+  right: 1vw;
+  top: 35vh;
+  background: none;
+  border: none;
+}
+main .cart-button i {
+  font-size: 2rem;
+  color: #8c7503;
+}
+
+.day-night {
+  position: fixed;
+  right: 1vw;
+  top: 25vh;
+  background: none;
+  border: none;
+}
+.day-night i {
+  font-size: 2rem;
+  color: #8c7503;
 }
 
 section {
+  margin: auto;
   background-color: #f2c49b;
   display: flex;
   flex-direction: column;
@@ -91,6 +129,7 @@ section article .inner-section {
   background-color: #bf815e;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 section article .inner-section button {
   font-size: 1.2rem;
@@ -101,11 +140,37 @@ section article .inner-section button {
   border: none;
 }
 
+aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  background-color: #8c7503;
+  display: inline-block;
+  vertical-align: middle;
+  flex-direction: column;
+  min-width: 30vw;
+  overflow: auto;
+}
+aside button {
+  margin: 5%;
+  padding: 5%;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 15px;
+  background-color: #d9bf3d;
+  border: none;
+}
+aside .shopping-list {
+  margin: 5%;
+  list-style-type: disc;
+}
+
 footer {
   background-color: #8c7503;
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
 }
 footer button {
@@ -116,7 +181,7 @@ footer button {
   background-color: #d9bf3d;
   border: none;
   padding: 2%;
-  margin: 5%;
+  margin: 2%;
 }
 footer button a {
   text-decoration: none;
@@ -135,31 +200,36 @@ footer button a:active {
 }
 footer div {
   display: flex;
+  width: 100%;
 }
 footer div img {
   width: 50%;
+  margin: 0;
 }
-footer ol {
+footer .social {
   list-style-type: none;
   padding: 0;
   font-size: 0;
   display: flex;
+  justify-content: center;
+  width: 30%;
+  margin: 0;
 }
-footer ol li {
-  margin: 30%;
+footer .social li {
+  margin: 10% 30%;
   font-size: 2rem;
   color: #f2f2f2;
 }
-footer ol li a:link {
+footer .social li a:link {
   color: #f2f2f2;
 }
-footer ol li a:visited {
+footer .social li a:visited {
   color: #d9bf3d;
 }
-footer ol li a:hover {
+footer .social li a:hover {
   color: #bf815e;
 }
-footer ol li a:active {
+footer .social li a:active {
   color: #f2c49b;
 }
 
