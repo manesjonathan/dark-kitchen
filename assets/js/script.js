@@ -8,22 +8,27 @@ function main() {
     let main = document.querySelector("main");
     let section = document.createElement("section");
     let div = document.createElement("div");
+    div.className = "title-main";
     let title = document.createElement("h2");
     title.innerText = "Nos tartines";
     div.appendChild(title);
-
 
     for (let dish of dishes) {
         section.appendChild(drawDishes(dish));
     }
     let shoppingCartButton = drawShoppingCartButton();
-    main.appendChild(div);
 
+    main.appendChild(div);
     main.appendChild(shoppingCartButton);
     main.appendChild(section);
     document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
+    drawDayNightSwitch();
+    drawResetSwitch();
+    drawSwitchVegan();
+}
 
+function drawDayNightSwitch() {
     // Day-Night switch
     dayNightButton = document.createElement("button");
     dayNightButton.className = "day-night"
@@ -42,6 +47,44 @@ function main() {
             localStorage.setItem("theme", "light")
             document.body.className = ""
         }
+    });
+}
+
+function drawSwitchVegan() {
+    let switchVegan = document.createElement("button");
+    switchVegan.innerText = "Plats végétaliens";
+
+    let icon = document.createElement("i");
+    icon.setAttribute("class", "fa-solid fa-seedling");
+    switchVegan.prepend(icon);
+
+    let div = document.querySelector(".title-main");
+    div.appendChild(switchVegan);
+    switchVegan.addEventListener("click", () => {
+        let articles = document.querySelectorAll("article")
+
+        articles.forEach(element => {
+            if (!element.classList.contains("vegan")) {
+                element.style.display = "none";
+            }
+        });
+    });
+}
+
+function drawResetSwitch() {
+    let switchReset = document.createElement("button");
+    switchReset.innerText = "Tous les plats";
+
+    let div = document.querySelector(".title-main");
+    div.appendChild(switchReset);
+
+    switchReset.addEventListener("click", () => {
+        let articles = document.querySelectorAll("article")
+
+        articles.forEach(element => {
+            element.style.display = "block";
+
+        });
     });
 }
 
@@ -138,6 +181,7 @@ function drawDishes(dishe) {
         let icon = document.createElement("i");
         icon.setAttribute("class", "fa-solid fa-seedling");
         innerSection.appendChild(icon);
+        article.classList.toggle("vegan");
     }
 
     // Create the back section
@@ -153,7 +197,6 @@ function drawDishes(dishe) {
 
 
 export function responsiveMenu() {
-    console.log("coucou")
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
