@@ -67,7 +67,8 @@ main {
 main .background {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .about {
   margin: 3%;
@@ -124,7 +125,8 @@ section article {
 section article img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section article h3 {
   font-size: 1rem;
