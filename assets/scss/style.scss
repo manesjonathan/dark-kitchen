@@ -212,6 +212,7 @@ aside {
   vertical-align: middle;
   flex-direction: column;
   min-width: 30vw;
+  max-width: 75%;
   overflow:auto;
 
   button {
@@ -240,7 +241,6 @@ footer {
   button {
     font-size: 1.2rem;
     font-family: $font;
-    width: 30vw;
     border-radius: 15px;
     background-color: $light_green;
     border: none;
