@@ -5,12 +5,12 @@ body {
 }
 
 body.dark {
-  background-color: black;
-  color: white;
+  background-color: #260C06;
+  color: #f2c49b;
 }
-body.dark header, body.dark main, body.dark section, body.dark article, body.dark .inner-section, body.dark aside, body.dark footer {
-  background-color: black;
-  color: white;
+body.dark header, body.dark main, body.dark section, body.dark article, body.dark .about, body.dark .inner-section, body.dark aside, body.dark footer {
+  background-color: #260C06;
+  color: #f2c49b;
 }
 
 header {
@@ -54,13 +54,13 @@ nav a {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #f2c49b;
+  color: #260C06;
 }
 
 .topnav a.active {
   background-color: #d9bf3d;
-  color: white;
+  color: #260C06;
 }
 
 main {
