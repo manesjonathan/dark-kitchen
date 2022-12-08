@@ -83,6 +83,16 @@ main {
     height: auto;
     object-fit: cover;
   }
+
+  .about {
+    margin: 3%;
+    background-color: $dark_brown;
+    font-size: 1.3rem;
+    padding: 2%;
+    margin-bottom: 0;
+
+  }
+
   div {
     padding-top: 5vh;
     display: flex;

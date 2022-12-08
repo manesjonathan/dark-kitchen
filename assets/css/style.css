@@ -70,6 +70,13 @@ main .background {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main .about {
+  margin: 3%;
+  background-color: #bf815e;
+  font-size: 1.3rem;
+  padding: 2%;
+  margin-bottom: 0;
+}
 main div {
   padding-top: 5vh;
   display: flex;
