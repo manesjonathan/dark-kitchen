@@ -60,6 +60,13 @@ main .background {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main .about {
+  margin: 3%;
+  background-color: #bf815e;
+  font-size: 1.3rem;
+  padding: 2%;
+  margin-bottom: 0;
+}
 main h2 {
   font-family: "Poppins", sans-serif;
   margin: 0;
