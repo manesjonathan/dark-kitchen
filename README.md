@@ -23,5 +23,5 @@ mais également trier ses tartines selon ses préférences. On peut également p
 ## La progression 
 Le travail est totalement terminé le 8 décembre 2022.
 
-
+![Demo](assets/image/demo.png)
 
