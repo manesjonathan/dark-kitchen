@@ -60,6 +60,8 @@ nav {
     display: block;
     color: #f2f2f2;
     text-align: center;
+    margin-left: 6vw;
+    margin-right: 2vw;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 1.25rem;
@@ -83,6 +85,16 @@ main {
     height: auto;
     object-fit: cover;
   }
+
+  .about {
+    margin: 3%;
+    background-color: $dark_brown;
+    font-size: 1.3rem;
+    padding: 2%;
+    margin-bottom: 0;
+
+  }
+
   div {
     padding-top: 5vh;
     display: flex;
@@ -103,7 +115,7 @@ main {
 
     i {
       font-size: 2rem;
-      color: $dark_green;
+      color: $grey;
     }
   }
 }
@@ -119,7 +131,7 @@ main {
 
   i {
     font-size: 2rem;
-    color: $dark_green;
+    color: $grey;
   }
 }
 section {

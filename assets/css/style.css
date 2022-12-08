@@ -46,6 +46,8 @@ nav a {
   display: block;
   color: #f2f2f2;
   text-align: center;
+  margin-left: 6vw;
+  margin-right: 2vw;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 1.25rem;
@@ -67,7 +69,15 @@ main {
 main .background {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .about {
+  margin: 3%;
+  background-color: #bf815e;
+  font-size: 1.3rem;
+  padding: 2%;
+  margin-bottom: 0;
 }
 main div {
   padding-top: 5vh;
@@ -88,7 +98,7 @@ main .cart-button {
 }
 main .cart-button i {
   font-size: 2rem;
-  color: #8c7503;
+  color: #f2f2f2;
 }
 
 .day-night {
@@ -100,7 +110,7 @@ main .cart-button i {
 }
 .day-night i {
   font-size: 2rem;
-  color: #8c7503;
+  color: #f2f2f2;
 }
 
 section {
@@ -117,7 +127,8 @@ section article {
 section article img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section article h3 {
   font-size: 1rem;
