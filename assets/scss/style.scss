@@ -3,6 +3,7 @@ $light_green: #d9bf3d;
 $dark_green: #8c7503;
 $light_brown: #f2c49b;
 $dark_brown: #bf815e;
+$very_dark_brown: #260C06;
 
 $font: "Poppins", sans-serif;
 $logo: "League Spartan", sans-serif;
@@ -15,11 +16,11 @@ body {
 
 
 body.dark {
-  background-color: black;
-  color: white;
-  header, main, section, article, .inner-section, aside, footer{
-    background-color: black;
-    color: white;
+  background-color: $very_dark_brown;
+  color: $light_brown;
+  header, main, section, article, .about, .inner-section, aside, footer{
+    background-color: $very_dark_brown;
+    color: $light_brown;
   }
 }
 
@@ -68,13 +69,13 @@ nav {
   }
 }
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: $light_brown;
+  color: $very_dark_brown;
 }
 
 .topnav a.active {
   background-color: $light_green;
-  color: white;
+  color: $very_dark_brown;
 }
 
 main {
@@ -91,10 +92,6 @@ main {
     font-size: 1.3rem;
     padding: 2%;
     margin-bottom: 0;
-
-  }
-
-  div {
     padding-top: 5vh;
     display: flex;
     flex-direction: column;
@@ -104,6 +101,33 @@ main {
       padding-left: 5%;
     }
     
+  }
+
+  .title-main {
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+
+    h2 {
+      margin-right: 5vw;
+    }
+    button {
+      background-color: $light_green;
+      border: none;
+      margin-left: 3vw;
+      width: 15vw;
+      border-radius: 15px;
+      &:hover {
+        background-color: $dark_brown;
+        color: $very_dark_brown;
+      }
+      
+      &:active {
+        background-color: $dark_green;
+        color: $very_dark_brown;
+      }
+    }
+  
   }
   .cart-button {
     position: fixed;
@@ -138,11 +162,16 @@ section {
   background-color: $light_brown;
   display: flex;
   flex-direction: column;
+  padding: 2%;
 
   article {
     padding: 5%;
     margin: 5%;
     background-color: $dark_brown;
+
+    .back-section {
+      display: none;
+    }
 
     img {
       width: 100%;
