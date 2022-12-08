@@ -7,6 +7,7 @@ function main() {
     let dishes = DISHES;
     let main = document.querySelector("main");
     let section = document.createElement("section");
+    section.id = "menu-tartines"
     let div = document.createElement("div");
     div.className = "title-main";
     let title = document.createElement("h2");
