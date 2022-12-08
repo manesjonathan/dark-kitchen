@@ -23,12 +23,12 @@ function main() {
     main.appendChild(section);
     document.body.insertBefore(main, document.querySelector("footer"));
     drawShoppingCart();
-    drawDayNightButton();
-    drawSwitchVegan();
+    drawDayNightSwitch();
     drawResetSwitch();
+    drawSwitchVegan();
 }
 
-function drawDayNightButton() {
+function drawDayNightSwitch() {
     // Day-Night switch
     dayNightButton = document.createElement("button");
     dayNightButton.className = "day-night"
@@ -52,9 +52,12 @@ function drawDayNightButton() {
 
 function drawSwitchVegan() {
     let switchVegan = document.createElement("button");
+    switchVegan.innerText = "Plats végétaliens";
+
     let icon = document.createElement("i");
     icon.setAttribute("class", "fa-solid fa-seedling");
-    switchVegan.appendChild(icon);
+    switchVegan.prepend(icon);
+
     let div = document.querySelector(".title-main");
     div.appendChild(switchVegan);
     switchVegan.addEventListener("click", () => {
@@ -70,9 +73,7 @@ function drawSwitchVegan() {
 
 function drawResetSwitch() {
     let switchReset = document.createElement("button");
-    let icon = document.createElement("i");
-    icon.setAttribute("class", "fa-solid fa-seedling");
-    switchReset.appendChild(icon);
+    switchReset.innerText = "Tous les plats";
 
     let div = document.querySelector(".title-main");
     div.appendChild(switchReset);
@@ -196,7 +197,6 @@ function drawDishes(dishe) {
 
 
 export function responsiveMenu() {
-    console.log("coucou")
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
