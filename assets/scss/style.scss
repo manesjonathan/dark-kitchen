@@ -3,6 +3,7 @@ $light_green: #d9bf3d;
 $dark_green: #8c7503;
 $light_brown: #f2c49b;
 $dark_brown: #bf815e;
+$very_dark_brown: #260C06;
 
 $font: "Poppins", sans-serif;
 $logo: "League Spartan", sans-serif;
@@ -15,11 +16,11 @@ body {
 
 
 body.dark {
-  background-color: black;
-  color: white;
-  header, main, section, article, .inner-section, aside, footer{
-    background-color: black;
-    color: white;
+  background-color: $very_dark_brown;
+  color: $light_brown;
+  header, main, section, article, .about, .inner-section, aside, footer{
+    background-color: $very_dark_brown;
+    color: $light_brown;
   }
 }
 
@@ -67,13 +68,13 @@ nav {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: $light_brown;
+  color: $very_dark_brown;
 }
 
 .topnav a.active {
   background-color: $light_green;
-  color: white;
+  color: $very_dark_brown;
 }
 
 main {
@@ -113,7 +114,7 @@ main {
 
     i {
       font-size: 2rem;
-      color: $dark_green;
+      color: $grey;
     }
   }
 }
@@ -129,7 +130,7 @@ main {
 
   i {
     font-size: 2rem;
-    color: $dark_green;
+    color: $grey;
   }
 }
 section {
