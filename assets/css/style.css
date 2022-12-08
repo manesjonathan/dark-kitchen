@@ -109,6 +109,11 @@ main .title-main button:active {
   background-color: #8c7503;
   color: #260C06;
 }
+main .title-main button i {
+  font-size: 1.5rem;
+  margin-right: 1vw;
+  color: #8c7503;
+}
 main .cart-button {
   position: fixed;
   right: 1vw;

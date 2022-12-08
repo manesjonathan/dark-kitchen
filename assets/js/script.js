@@ -166,7 +166,7 @@ function drawDishes(dishe) {
 
     // Add dish to shopping cart
     let addToCartButton = document.createElement("button");
-    addToCartButton.innerText = "Add to cart"
+    addToCartButton.innerText = "Ajouter au panier"
     addToCartButton.addEventListener("click", () => {
         addToCart(dishe);
     })
