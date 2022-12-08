@@ -1,6 +1,4 @@
-# dark-kitchen
-Dark Kitchen
-
+# Dark Kitchen
 
 ## Qui a fait le projet ?
 Nous étions un groupe de 4, Aurore Lemaire, Nathalie Goffette, Jonathan Manes et Quentin Bource. 
