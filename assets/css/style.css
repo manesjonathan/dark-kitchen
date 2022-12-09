@@ -46,6 +46,8 @@ nav a {
   display: block;
   color: #f2f2f2;
   text-align: center;
+  margin-left: 6vw;
+  margin-right: 2vw;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 1.25rem;
@@ -67,8 +69,7 @@ main {
 main .background {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .about {
   margin: 3%;
@@ -76,16 +77,41 @@ main .about {
   font-size: 1.3rem;
   padding: 2%;
   margin-bottom: 0;
-}
-main div {
   padding-top: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-main div h2 {
+main .about h2 {
   font-family: "Poppins", sans-serif;
   padding-left: 5%;
+}
+main .title-main {
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+}
+main .title-main h2 {
+  margin-right: 5vw;
+}
+main .title-main button {
+  background-color: #d9bf3d;
+  border: none;
+  margin-left: 3vw;
+  border-radius: 15px;
+}
+main .title-main button:hover {
+  background-color: #bf815e;
+  color: #260C06;
+}
+main .title-main button:active {
+  background-color: #8c7503;
+  color: #260C06;
+}
+main .title-main button i {
+  font-size: 1.5rem;
+  margin-right: 1vw;
+  color: #8c7503;
 }
 main .cart-button {
   position: fixed;
@@ -116,17 +142,20 @@ section {
   background-color: #f2c49b;
   display: flex;
   flex-direction: column;
+  padding: 2%;
 }
 section article {
   padding: 5%;
   margin: 5%;
   background-color: #bf815e;
 }
+section article .back-section {
+  display: none;
+}
 section article img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section article h3 {
   font-size: 1rem;

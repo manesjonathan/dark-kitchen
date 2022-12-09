@@ -58,7 +58,6 @@ export function clearCart() {
  */
 export function calculateTotal() {
     let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
-    console.log(orderList);
     if (orderList !== null) {
         let total = 0.00;
         for (let dishe of orderList) {
