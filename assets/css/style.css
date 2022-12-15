@@ -5,11 +5,18 @@ body {
 }
 
 body.dark {
-  background-color: #260C06;
+  background-color: #260c06;
   color: #f2c49b;
 }
-body.dark header, body.dark main, body.dark section, body.dark article, body.dark .about, body.dark .inner-section, body.dark aside, body.dark footer {
-  background-color: #260C06;
+body.dark header,
+body.dark main,
+body.dark section,
+body.dark article,
+body.dark .about,
+body.dark .inner-section,
+body.dark aside,
+body.dark footer {
+  background-color: #260c06;
   color: #f2c49b;
 }
 
@@ -55,12 +62,12 @@ nav a {
 
 .topnav a:hover {
   background-color: #f2c49b;
-  color: #260C06;
+  color: #260c06;
 }
 
 .topnav a.active {
   background-color: #d9bf3d;
-  color: #260C06;
+  color: #260c06;
 }
 
 main {
@@ -81,6 +88,7 @@ main .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: justify;
 }
 main .about h2 {
   font-family: "Poppins", sans-serif;
@@ -102,11 +110,16 @@ main .title-main button {
 }
 main .title-main button:hover {
   background-color: #bf815e;
-  color: #260C06;
+  color: #260c06;
 }
 main .title-main button:active {
   background-color: #8c7503;
-  color: #260C06;
+  color: #260c06;
+}
+main .title-main button i {
+  font-size: 1.5rem;
+  margin-right: 1vw;
+  color: #8c7503;
 }
 main .cart-button {
   position: fixed;
@@ -264,7 +277,7 @@ footer .social li a:active {
   color: #f2c49b;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .topnav a {
     display: none;
   }
@@ -273,7 +286,7 @@ footer .social li a:active {
     display: block;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .topnav.responsive {
     position: relative;
   }
@@ -314,5 +327,13 @@ footer .social li a:active {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
+  }
+}
+@media screen and (max-width: 992px) {
+  main .about .hidden {
+    display: none;
+  }
+  main .about:hover p {
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */

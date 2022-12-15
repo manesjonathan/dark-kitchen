@@ -1,6 +1,4 @@
-# dark-kitchen
-Dark Kitchen
-
+# Dark Kitchen
 
 ## Qui a fait le projet ?
 Nous étions un groupe de 4, Aurore Lemaire, Nathalie Goffette, Jonathan Manes et Quentin Bource. 
@@ -23,5 +21,5 @@ mais également trier ses tartines selon ses préférences. On peut également p
 ## La progression 
 Le travail est totalement terminé le 8 décembre 2022.
 
-
+![Demo](assets/image/demo.png)
 

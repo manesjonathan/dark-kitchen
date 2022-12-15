@@ -3,7 +3,7 @@ $light_green: #d9bf3d;
 $dark_green: #8c7503;
 $light_brown: #f2c49b;
 $dark_brown: #bf815e;
-$very_dark_brown: #260C06;
+$very_dark_brown: #260c06;
 
 $font: "Poppins", sans-serif;
 $logo: "League Spartan", sans-serif;
@@ -12,18 +12,24 @@ body {
   margin: 0;
   font-family: $font;
   background-color: $light_brown;
+  
 }
-
 
 body.dark {
   background-color: $very_dark_brown;
   color: $light_brown;
-  header, main, section, article, .about, .inner-section, aside, footer{
+  header,
+  main,
+  section,
+  article,
+  .about,
+  .inner-section,
+  aside,
+  footer {
     background-color: $very_dark_brown;
     color: $light_brown;
   }
 }
-
 
 header {
   display: flex;
@@ -51,6 +57,7 @@ nav {
   overflow: hidden;
   display: block;
   width: 100%;
+  
 
   .icon {
     display: none;
@@ -68,14 +75,17 @@ nav {
     font-size: 1.25rem;
   }
 }
+
 .topnav a:hover {
   background-color: $light_brown;
   color: $very_dark_brown;
+  
 }
 
 .topnav a.active {
   background-color: $light_green;
   color: $very_dark_brown;
+  
 }
 
 main {
@@ -96,11 +106,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: justify;
+
     h2 {
       font-family: $font;
       padding-left: 5%;
     }
-    
   }
 
   .title-main {
@@ -120,13 +131,18 @@ main {
         background-color: $dark_brown;
         color: $very_dark_brown;
       }
-      
+
       &:active {
         background-color: $dark_green;
         color: $very_dark_brown;
       }
+
+      i {
+        font-size: 1.5rem;
+        margin-right: 1vw;
+        color: $dark_green;
+      }
     }
-  
   }
   .cart-button {
     position: fixed;
@@ -148,8 +164,6 @@ main {
   top: 25vh;
   background: none;
   border: none;
-
-
 
   i {
     font-size: 2rem;
@@ -230,9 +244,6 @@ aside {
   }
 }
 
-
-
-
 footer {
   background-color: $dark_green;
   display: flex;
@@ -306,7 +317,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .topnav a {
     display: none;
   }
@@ -316,7 +327,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .topnav.responsive {
     position: relative;
   }
@@ -363,5 +374,20 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    .about{
+      .hidden {
+        display: none;
+      }
+      &:hover{
+        p {
+          display: block;
+        }
+      }
+    }
   }
 }
