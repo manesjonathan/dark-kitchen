@@ -8,7 +8,6 @@ export function addToCart(dishe) {
     orderListEmpty.push(dishe);
     sessionStorage.setItem("shopping-cart", JSON.stringify(orderListEmpty));
     showCart();
-    calculateTotal();
 }
 
 /**
@@ -19,7 +18,7 @@ export function showCart() {
     let ol = document.querySelector(".shopping-list");
     ol.innerHTML = null;
 
-    let orderList = orderListEmpty;
+    let orderList = JSON.parse(sessionStorage.getItem("shopping-cart"));
     if (orderList !== null) {
         for (let dishe of orderList) {
             let li = document.createElement("li");
